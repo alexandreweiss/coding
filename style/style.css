@@ -7,3 +7,8 @@ img {
     margin-right: auto;
     display: block;
 }
+
+p,
+h1 {
+    font-family: "Playwrite ES Deco Guides", serif;
+}
