@@ -27,13 +27,24 @@ function lancerBoucleDeJeu(listePropositions) {
         }
         compteur += 1;
     }
-    afficherResultat(score, listePropositions.length);
-    console.log("Score : " + score);
     return score;
 }
 
 
 function lancerJeu() {
     let resulatChoix = choisirPhrasesOuMots();
-    console.log("Le choix est : " + resulatChoix);
+    let nbMotsProposes = 0;
+
+    if (resulatChoix == "phrases") {
+        let score = lancerBoucleDeJeu(listePhrases);
+        nbMotsProposes = listePhrases.length;
+    } else {
+        let score = lancerBoucleDeJeu(listeMots);
+        nbMotsProposes = listeMots.length;
+    }
+
+    afficherResultat(score, nbMotsProposes);
+
 }
+
+lancerJeu();
